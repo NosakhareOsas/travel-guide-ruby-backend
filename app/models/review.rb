@@ -1,4 +1,4 @@
-class City < ActiveRecord::Base
-    belongs_to :reviewers
-    belongs_to :cities
+class Review < ActiveRecord::Base
+    belongs_to :review
+    belongs_to :city
 end
