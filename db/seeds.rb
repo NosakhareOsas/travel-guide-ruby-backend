@@ -15,7 +15,7 @@ puts "Seeding games..."
   )
 
   City.create(
-    name: Faker::Address.unique.city
+    name: Faker::Address.unique.city,
     minimum_wage: rand(10..100),
     currency: Faker::Currency.unique.name,
     country: Faker::Address.unique.country,
