@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
         cities.to_json
     end
 
-    get '/cities/:rank' do
+    get '/cities/rank_by/:rank' do
         cities = City.all.order(params[:rank]).reverse
         cities.to_json
     end
