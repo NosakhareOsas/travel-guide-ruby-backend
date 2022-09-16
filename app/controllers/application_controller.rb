@@ -1,4 +1,4 @@
-class ApplicationController < Sinatra::Base
+class ApplicationController < Sinatra::Base 
 
     set :default_content_type, 'application/json'
 
@@ -20,6 +20,4 @@ class ApplicationController < Sinatra::Base
         users = User.all
         users.to_json
     end
-
-    
 end    
