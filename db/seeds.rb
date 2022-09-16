@@ -4,14 +4,14 @@ User.destroy_all
 City.destroy_all
 Review.destroy_all
 
-puts "Seeding games..."
+puts "Seeding in progress..."
 
 # run a loop 10 times
 10.times do
   # create a reviewer with random data
   User.create(
     name: Faker::Name.unique.name,
-    bio: Faker::Lorem.sentences
+    bio: Faker::Lorem.sentence
   )
 
   City.create(
@@ -23,7 +23,7 @@ puts "Seeding games..."
   )
 
   Review.create(
-    comment: Faker::Lorem.sentences,
+    comment: Faker::Lorem.sentence,
     traffic: rand(1..5),
     night_life: rand(1..5),
     safety: rand(1..5), 
