@@ -20,13 +20,14 @@ puts "Seeding in progress..."
     currency: Faker::Currency.unique.name,
     country: Faker::Address.unique.country,
     employment_rate: rand(0..100)
+    crime_rate: rand(0..100),
+    image: Faker::LoremFlickr.unique.image
   )
 
   Review.create(
     comment: Faker::Lorem.sentence,
     traffic: rand(1..5),
-    night_life: rand(1..5),
-    safety: rand(1..5), 
+    night_life: rand(1..5), 
     friendly_to_foreigner: rand(1..5),
     places_to_work_from: rand(1..5),
     quality_of_internet: rand(1..5),
