@@ -27,39 +27,37 @@ class ApplicationController < Sinatra::Base
     end
 
     post '/reviews' do
-    review = Review.create(
-        comment: params[:comment],
-        traffic: params[:traffic],
-        night_life: params[:night_life],
-        friendly_to_foreigner: params[:friendly_to_foreigner],
-        places_to_work_from: params[:places_to_work_from],
-        quality_of_internet: params[:quality_of_internet],
-        quality_of_healthcare: params[:quality_of_healthcare],
-        city_id: params[:city_id],
-        user_id: params[:user_id]
-    )
-    review.to_json
+        review = Review.create(
+            comment: params[:comment],
+            traffic: params[:traffic],
+            night_life: params[:night_life],
+            friendly_to_foreigner: params[:friendly_to_foreigner],
+            places_to_work_from: params[:places_to_work_from],
+            quality_of_internet: params[:quality_of_internet],
+            quality_of_healthcare: params[:quality_of_healthcare],
+            city_id: params[:city_id],
+            user_id: params[:user_id]
+        )
+        review.to_json
     end
 
     delete '/reviews/:id' do
         review = Review.find(params[:id])
         review.destroy
         review.to_json
-      end
+    end
     
     patch '/reviews/:id' do
-    review = Review.find(params[:id])
-    review.update(
-        comment: params[:comment],
-        traffic: params[:traffic],
-        night_life: params[:night_life],
-        friendly_to_foreigner: params[:friendly_to_foreigner],
-        places_to_work_from: params[:places_to_work_from],
-        quality_of_internet: params[:quality_of_internet],
-        quality_of_healthcare: params[:quality_of_healthcare]
-    )
-    review.to_json
+        review = Review.find(params[:id])
+        review.update(
+            comment: params[:comment],
+            traffic: params[:traffic],
+            night_life: params[:night_life],
+            friendly_to_foreigner: params[:friendly_to_foreigner],
+            places_to_work_from: params[:places_to_work_from],
+            quality_of_internet: params[:quality_of_internet],
+            quality_of_healthcare: params[:quality_of_healthcare]
+        )
+        review.to_json
     end
-
-
 end    
