@@ -9,9 +9,9 @@ class ApplicationController < Sinatra::Base
 
     get '/cities/:id' do
         city = City.find(params[:id])
-        city.to_json(only: [:name, :minimum_wage, :currency, :country, :employment_rate], include: {
+        city.to_json(include: {
             reviews: {only: [:comment, :traffic, :safety, :night_life, :friendly_to_foreigner, :places_to_work_from, :quality_of_healthcare, :quality_of_internet], include: {
-                users: { only: [:name]}
+                user: { only: [:name]}
             }}
         })
     end
@@ -20,4 +20,6 @@ class ApplicationController < Sinatra::Base
         users = User.all
         users.to_json
     end
+
+    
 end    
