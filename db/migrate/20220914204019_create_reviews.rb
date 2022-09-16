@@ -4,7 +4,6 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.string :comment
       t.integer :traffic
       t.integer :night_life
-      t.integer :safety
       t.integer :friendly_to_foreigner
       t.integer :places_to_work_from
       t.integer :quality_of_internet

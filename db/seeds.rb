@@ -19,9 +19,9 @@ puts "Seeding in progress..."
     minimum_wage: rand(10..100),
     currency: Faker::Currency.unique.name,
     country: Faker::Address.unique.country,
-    employment_rate: rand(0..100)
-    crime_rate: rand(0..100),
-    image: Faker::LoremFlickr.unique.image
+    employment_rate: rand(1..100),
+    crime_rate: rand(1..100),
+    image: Faker::LoremFlickr.image
   )
 
   Review.create(
