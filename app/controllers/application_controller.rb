@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     get '/cities/:id' do
         city = City.find(params[:id])
         city.to_json(include: {
-            reviews: {only: [:comment, :traffic, :safety, :night_life, :friendly_to_foreigner, :places_to_work_from, :quality_of_healthcare, :quality_of_internet], include: {
+            reviews: {only: [:comment, :traffic, :night_life, :friendly_to_foreigner, :places_to_work_from, :quality_of_healthcare, :quality_of_internet], include: {
                 user: { only: [:name]}
             }}
         })
@@ -31,7 +31,6 @@ class ApplicationController < Sinatra::Base
         comment: params[:comment],
         traffic: params[:traffic],
         night_life: params[:night_life],
-        safety: params[:safety],
         friendly_to_foreigner: params[:friendly_to_foreigner],
         places_to_work_from: params[:places_to_work_from],
         quality_of_internet: params[:quality_of_internet],
@@ -54,7 +53,6 @@ class ApplicationController < Sinatra::Base
         comment: params[:comment],
         traffic: params[:traffic],
         night_life: params[:night_life],
-        safety: params[:safety],
         friendly_to_foreigner: params[:friendly_to_foreigner],
         places_to_work_from: params[:places_to_work_from],
         quality_of_internet: params[:quality_of_internet],
