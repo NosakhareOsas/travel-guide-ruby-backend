@@ -43,8 +43,8 @@ city_image.length.times do |i|
     places_to_work_from: rand(1..5),
     quality_of_internet: rand(1..5),
     quality_of_healthcare: rand(1..5),
-    city_id: rand(1..10),
-    user_id: rand(1..10)
+    city_id: rand(1..8),
+    user_id: rand(1..8)
   )
 end
 
