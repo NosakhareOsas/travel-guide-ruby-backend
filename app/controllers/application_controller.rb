@@ -38,7 +38,9 @@ class ApplicationController < Sinatra::Base
             city_id: params[:city_id],
             user_id: params[:user_id]
         )
-        review.to_json
+        review.to_json(include: {
+            user: { only: [:name]}
+        })
     end
 
     delete '/reviews/:id' do
