@@ -5,6 +5,9 @@ API to the travel-guide-ruby-frontend React App.
 
 `config.ru` contains Rack configuration for CORS, JSON parser and runs the application controller
 
+## Production deployment link
+https://radiant-oasis-70177.herokuapp.com/cities
+
 ## Install
 
     bundle install
